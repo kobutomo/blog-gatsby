@@ -3,10 +3,9 @@ import React from "react"
 import styled from "styled-components"
 import { Bio } from "../components/bio"
 import { Layout } from "../components/layout"
-import { FadeLink } from "../components/link"
 import { SEO } from "../components/seo"
 import { Query, SitePageContext } from "../graphql-types"
-import { rhythm, styledScale } from "../utils/typography"
+import { Link } from "gatsby"
 
 interface Props extends PageRendererProps {
   pageContext: SitePageContext
@@ -15,13 +14,9 @@ interface Props extends PageRendererProps {
 
 const Date = styled.p`
   display: block;
-  ${styledScale(-1 / 5)};
-  margin-bottom: ${rhythm(1)};
-  margin-top: ${rhythm(-1)};
 `
 
 const Divider = styled.hr`
-  margin-bottom: ${rhythm(1)};
 `
 
 const PostNavigator = styled.ul`
@@ -40,7 +35,6 @@ const BlogPostTemplate = (props: Props) => {
   const html = post.html!
   const siteTitle = data.site!.siteMetadata!.title!
   const { previous, next } = props.pageContext
-
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO
@@ -55,16 +49,16 @@ const BlogPostTemplate = (props: Props) => {
       <PostNavigator>
         <li>
           {previous && (
-            <FadeLink to={previous.fields!.slug!} rel="prev">
+            <Link to={previous.fields!.slug!} rel="prev">
               ← {previous.frontmatter!.title}
-            </FadeLink>
+            </Link>
           )}
         </li>
         <li>
           {next && (
-            <FadeLink to={next.fields!.slug!} rel="next">
+            <Link to={next.fields!.slug!} rel="next">
               {next.frontmatter!.title} →
-            </FadeLink>
+            </Link>
           )}
         </li>
       </PostNavigator>
@@ -74,7 +68,7 @@ const BlogPostTemplate = (props: Props) => {
 
 export default BlogPostTemplate
 
-export const pageQuery = graphql`
+export const query = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {

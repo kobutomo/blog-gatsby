@@ -1,8 +1,7 @@
 import { PageRendererProps } from "gatsby"
 import React, { ReactNode } from "react"
 import styled from "styled-components"
-import { rhythm, styledScale } from "../utils/typography"
-import { FadeLink } from "./link"
+import { Link } from "gatsby"
 
 interface Props extends PageRendererProps {
   title: string
@@ -10,8 +9,6 @@ interface Props extends PageRendererProps {
 }
 
 const StyledH1 = styled.h1`
-  ${styledScale(1.5)};
-  margin-bottom: ${rhythm(1.5)};
   margin-top: 0;
 `
 
@@ -20,17 +17,10 @@ const StyledH3 = styled.h3`
   margin-top: 0;
 `
 
-const StyledLink = styled(FadeLink)`
-  box-shadow: none;
-  color: inherit;
-  text-decoration: none;
-`
 
 const Content = styled.div`
   margin-left: auto;
   margin-right: auto;
-  max-width: ${rhythm(24)};
-  padding: ${`${rhythm(1.5)} ${rhythm(3 / 4)}`};
 `
 
 export const Layout = (props: Props) => {
@@ -43,7 +33,7 @@ export const Layout = (props: Props) => {
     <Content>
       <header>
         <HeaderTitle>
-          <StyledLink to={`/`}>{title}</StyledLink>
+          <Link to={`/`}>{title}</Link>
         </HeaderTitle>
       </header>
       <main>{children}</main>

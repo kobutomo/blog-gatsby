@@ -3,17 +3,12 @@ import React from "react"
 import styled from "styled-components"
 import { Bio } from "../components/bio"
 import { Layout } from "../components/layout"
-import { FadeLink } from "../components/link"
 import { SEO } from "../components/seo"
 import { MarkdownRemark } from "../graphql-types"
-import { rhythm } from "../utils/typography"
+import { Link } from "gatsby"
 
-const StyledLink = styled(FadeLink)`
-  box-shadow: none;
-`
 
 const Title = styled.h3`
-  margin-bottom: ${rhythm(1 / 4)};
 `
 
 type Props = PageRendererProps
@@ -34,7 +29,7 @@ const BlogIndex = (props: Props) => {
               slug
             }
             frontmatter {
-              date(formatString: "MMMM DD, YYYY")
+              date(formatString: "YYYY-MM-DD")
               title
               description
             }
@@ -64,7 +59,7 @@ const BlogIndex = (props: Props) => {
         return (
           <div key={slug}>
             <Title>
-              <StyledLink to={slug}>{title}</StyledLink>
+              <Link to={slug}>{title}</Link>
             </Title>
             <small>{frontmatter.date}</small>
             <p
