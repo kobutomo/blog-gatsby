@@ -37,6 +37,7 @@ const BlogIndex = (props: Props) => {
         }
       }
     }
+    
   `)
 
   const siteTitle = data.site.siteMetadata.title
@@ -45,8 +46,8 @@ const BlogIndex = (props: Props) => {
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO
-        title="All posts"
-        keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+        title="TOP"
+        keywords={["blog", "gatsby", "javascript","typescript", "react", "プログラミング", "フロントエンド", "エンジニア"]}
       />
       <Bio />
       {posts.map(({ node }: { node: MarkdownRemark }) => {

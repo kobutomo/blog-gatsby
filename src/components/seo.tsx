@@ -23,7 +23,7 @@ interface Props {
 }
 
 export const SEO = (props: Props) => {
-  const lang = props.lang || "en"
+  const lang = props.lang || "ja"
   const meta = props.meta || []
   const keywords = props.keywords || []
   const description = props.description || ""
@@ -52,6 +52,10 @@ export const SEO = (props: Props) => {
       title={props.title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
+        {
+          content: "width=device-width, initial-scale=1.0",
+          name: "viewport"
+        },
         {
           content: metaDescription,
           name: `description`,
@@ -88,9 +92,9 @@ export const SEO = (props: Props) => {
         .concat(
           keywords.length > 0
             ? {
-                content: keywords.join(`, `),
-                name: `keywords`,
-              }
+              content: keywords.join(`, `),
+              name: `keywords`,
+            }
             : []
         )
         .concat(meta)}
