@@ -10,18 +10,35 @@ interface Props extends PageRendererProps {
   children: ReactNode
 }
 
-const StyledH1 = styled.h1`
-  font-size: 1.8rem;
+const titleStyle = `
+font-size: 2rem;
+text-shadow:2px 2px 1px #7f92d3;
+font-weight: bold;
+letter-spacing : 0.1em;
+text-align: center;
+a {
+  position: relative;
+  color: #fff;
+  &::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #dd9c9c;
+    bottom: 0px;
+    left: 0;
+    z-index:-1;
+  }
+}
 `
 
-const StyledH3 = styled.h3`
-  font-size: 1.8rem;
-  text-shadow:0px 2px 2px #237bff;
-`
+const StyledH1 = styled.h1`${titleStyle}`
+
+const StyledH3 = styled.h3`${titleStyle}`
 
 const Header = styled.header`
   padding: 15px 0;
-  text-shadow:0px 2px 2px #237bff;
 `
 
 
@@ -30,7 +47,7 @@ const Content = styled.div`
   margin-right: auto;
   max-width: 1000px;
   box-sizing: border-box;
-  padding: 0 20px;
+  padding: 0 25px;
   @media screen and (min-width: 560px) {
     padding: 0 50px;
   }

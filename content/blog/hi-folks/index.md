@@ -4,10 +4,9 @@ date: "2015-05-28T22:40:32.169Z"
 description: This is a custom description for Seo and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 ---
 
-Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean. A small river named
-Duden flows by their place and supplies it with the necessary regelialia.
+例えば、bodyのフォントサイズが1emにセットされているものとすると、ブラウザ標準の1em = 16pxです。使いたいフォントサイズが12pxなら、0.75emを指定します（12/16 = 0.75だからです）。同様に、使いたいフォントサイズが10pxなら、0.625emを指定します（10/16 = 0.625）。22pxなら1.375emです（22/16）。
+
+文書内どこでも使えるよく知られたテクニックとして、bodyのフォントサイズを62.5%にすることで（これはデフォルト16pxの62.5%です）、これは10px、すなわち0.625emになります。これで「px値を10で割る」という覚えやすい変換式を使って、どの要素にもem単位でフォントサイズをセットできます。この方法では6px = 0.6em、8px = 0.8em、12px = 1.2em、14px = 1.4em、16px = 1.6emになります。例を挙げます:
 
 ## On deer horse aboard tritely yikes and much
 
