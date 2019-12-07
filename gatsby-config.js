@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `blog.tomokoro.com`,
+    title: `Tomokoro Engineering`,
     author: `Tomoro Nishida`,
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
@@ -42,6 +42,24 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+        ],
+      },
+    }, {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-code-titles',
+            options: {
+              className: 'your-custom-class-name',
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              showLineNumbers: true,
+            },
+          },
         ],
       },
     },

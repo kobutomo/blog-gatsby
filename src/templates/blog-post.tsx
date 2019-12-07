@@ -27,6 +27,27 @@ const PostNavigator = styled.ul`
   padding: 0;
 `
 
+const Article = styled.div`
+p{
+  margin: 1em 0;
+}
+strong{
+  font-weight: 400;
+  background: linear-gradient(0deg, rgba(221, 156, 156, 1) 2px, #1c232c 2px);
+}
+`
+
+const Title = styled.h1`
+  font-size: 2.5rem;
+  font-weight: bold;
+  @media screen and (min-width: 560px) {
+    font-size: 2.8rem;
+  }
+  @media screen and (min-width: 960px) {
+    font-size: 3.2rem;
+  }
+`
+
 const BlogPostTemplate = (props: Props) => {
   const data = props.data!
   const post = data.markdownRemark!
@@ -41,9 +62,9 @@ const BlogPostTemplate = (props: Props) => {
         title={frontmatter.title!}
         description={frontmatter.description || excerpt}
       />
-      <h1>{post.frontmatter!.title}</h1>
+      <Title>{post.frontmatter!.title}</Title>
       <Date>{frontmatter.date}</Date>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Article dangerouslySetInnerHTML={{ __html: html }} />
       <Divider />
       <Bio />
       <PostNavigator>
@@ -82,7 +103,7 @@ export const query = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY-MM-DD")
         description
       }
     }

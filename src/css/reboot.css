@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700&subset=japanese");
+@import url("https://fonts.googleapis.com/css?family=Overpass+Mono:400,600&display=swap");
 html {
   font-size: 62.5% !important;
 }
@@ -8,13 +9,30 @@ body {
   height: 100% !important;
 }
 body {
-  font-family: "Noto Sans JP", sans-serif;
-  background-color: #242c38 !important;
+  font-family: "Overpass Mono", "Noto Sans JP", sans-serif;
+  background-color: #202429 !important;
   color: #f8f9ff;
   letter-spacing: 0.03em;
   font-size: 1.5rem;
   line-height: 1.75;
   min-width: 320px;
+}
+pre {
+  border-radius: 5px;
+}
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 1em 0;
+  overflow: auto;
+}
+::selection {
+  background: #d1e6a9c0;
+  color: #1c232c;
+}
+
+::-moz-selection {
+  background: #d1e6a9c0;
+  color: #1c232c;
 }
 a {
   color: #f8f9ff;
