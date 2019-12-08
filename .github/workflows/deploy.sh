@@ -1,1 +1,0 @@
-rsync -acvz --delete ./content/ bitnami@13.230.214.72:~/htdocs/

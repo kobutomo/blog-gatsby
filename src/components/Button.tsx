@@ -21,7 +21,7 @@ export default styled(Button)`
     background-color: #b65858;
     border-radius: 50px;
     justify-content: center;
-    box-sizing: border-box;
+    box-sizing: border-box; 
     margin: 0 auto;
     box-shadow: 0px 2px 1px 0px #643232;
     ${props => {
