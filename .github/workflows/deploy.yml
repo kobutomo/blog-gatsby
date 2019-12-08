@@ -25,4 +25,4 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
-        script: bash ./deploy.sh
+        script: ./deploy.sh
