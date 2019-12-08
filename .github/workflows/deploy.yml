@@ -24,4 +24,4 @@ jobs:
         SSH_KEY: ${{ secrets.SSH_KEY }}
 
     - name: rsync deploy
-      run: rsync -acvz --delete -e "ssh -i key -o StrictHostKeyChecking=no" $GITHUB_WORKSPACE/public bitnami@13.230.214.72:~/htdocs/
+      run: rsync -acvz --delete -e "ssh -i key -o StrictHostKeyChecking=no" $GITHUB_WORKSPACE/public/ bitnami@13.230.214.72:~/htdocs/
