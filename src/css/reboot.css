@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Overpass+Mono:400,600&display=swap");
 html {
   font-size: 62.5% !important;
+  -webkit-text-size-adjust: 100%;
 }
 html,
 body {
