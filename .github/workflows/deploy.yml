@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: '10.x'
     - run: npm install
-    - run: gatsby build
+    - run: npm run build
 
     - name: Install SSH key
       uses: shimataro/ssh-key-action@v1
