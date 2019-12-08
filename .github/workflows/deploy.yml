@@ -11,12 +11,12 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-#    - name: setup node
-#      uses: actions/setup-node@v1
-#      with:
-#        node-version: '10.x'
-#    - run: npm install
-#    - run: npm run build
+    - name: setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - run: npm install
+    - run: npm run build
 
     - name: ssh key generate
       run: echo "$SSH_KEY" > key && chmod 600 key
@@ -24,4 +24,4 @@ jobs:
         SSH_KEY: ${{ secrets.SSH_KEY }}
 
     - name: rsync deploy
-      run: rsync -acvz --delete -e "ssh -i key -o StrictHostKeyChecking=no" $GITHUB_WORKSPACE/content bitnami@13.230.214.72:~/htdocs/
+      run: rsync -acvz --delete -e "ssh -i key -o StrictHostKeyChecking=no" $GITHUB_WORKSPACE/public bitnami@13.230.214.72:~/htdocs/
