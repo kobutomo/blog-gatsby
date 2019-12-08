@@ -28,7 +28,6 @@ const Divider = styled.hr`
 
 const PostNavigator = styled.ul`
   margin-top: 10px;
-  margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -38,7 +37,6 @@ const PostNavigator = styled.ul`
   }
   @media screen and (min-width: 960px) {
     margin-top: 0;
-    margin-bottom: 40px;
     li{
      width: 30%;
       margin-top: -38px;

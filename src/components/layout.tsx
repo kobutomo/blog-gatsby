@@ -116,6 +116,17 @@ const Content = styled.div`
   }
 `
 
+const Footer = styled.footer`
+  padding: 20px 0 10px;
+  font-size: 1.2rem;
+  color: #ccc;
+  text-align: center;
+  @media screen and (min-width: 960px) {
+    padding: 50px 0 20px;
+    font-size: 1.4rem;
+  }
+`
+
 export const Layout = (props: Props) => {
   const { location, title, children } = props
   const rootPath = `/`
@@ -130,11 +141,7 @@ export const Layout = (props: Props) => {
         </HeaderTitle>
       </Header>
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <Footer>© {new Date().getFullYear()}, Tomoro Nishida</Footer>
     </Content>
   )
 }
