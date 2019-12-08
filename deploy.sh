@@ -1,1 +1,1 @@
-rsync -acvz --delete ./output/ bitnami@13.230.214.72:~/htdocs/
+rsync -acvz --delete ./public/ bitnami@13.230.214.72:~/htdocs/
