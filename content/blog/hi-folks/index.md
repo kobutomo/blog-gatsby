@@ -1,7 +1,6 @@
 ---
 title: 初カキコ…ども
 date: "2019-12-05"
-description: This is a custom description for Seo and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 ---
 
 例えば、bodyのフォントサイズが1emに**セットされているものとする**と、ブラウザ標準の1em = 16pxです。使いたいフォントサイズが12pxなら、0.75emを指定します（12/16 = 0.75だからです）。同様に、使いたいフォントサイズが10pxなら、0.625emを指定します（10/16 = 0.625）。22pxなら1.375emです（22/16）。  

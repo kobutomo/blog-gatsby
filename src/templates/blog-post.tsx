@@ -6,6 +6,7 @@ import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
 import { Query, SitePageContext } from "../graphql-types"
 import { Link } from "gatsby"
+import Button from "../components/Button"
 
 interface Props extends PageRendererProps {
   pageContext: SitePageContext
@@ -17,23 +18,51 @@ const Date = styled.p`
 `
 
 const Divider = styled.hr`
+  border-top: 1px solid #ccc;
+  margin: 0;
+  margin-bottom: 20px;
+  @media screen and (min-width: 960px) {
+    margin-bottom: 40px;
+  }
 `
 
 const PostNavigator = styled.ul`
+  margin-top: 10px;
+  margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  list-style: none;
-  padding: 0;
+  li {
+    width: 50%;
+    text-align: center;
+  }
+  @media screen and (min-width: 960px) {
+    margin-top: 0;
+    margin-bottom: 40px;
+    li{
+     width: 30%;
+      margin-top: -38px;
+    }
+  }
 `
 
 const Article = styled.div`
+padding: 25px 0;
+@media screen and (min-width: 960px) {
+  padding: 50px 0;
+}
+> *:first-child {
+  margin-top: 0;
+}
+> *:last-child {
+  margin-bottom: 0;
+}
 p{
   margin: 1em 0;
 }
 strong{
   font-weight: 400;
-  background: linear-gradient(0deg, rgba(221, 156, 156, 1) 2px, #1c232c 2px);
+  background: linear-gradient(0deg, #dd9c9c 2px, #1c232c 2px);
 }
 `
 
@@ -66,20 +95,26 @@ const BlogPostTemplate = (props: Props) => {
       <Date>{frontmatter.date}</Date>
       <Article dangerouslySetInnerHTML={{ __html: html }} />
       <Divider />
-      <Bio />
+      <Button width={"100px"}>
+        <Link to="/" rel="top">TOP</Link>
+      </Button>
       <PostNavigator>
         <li>
           {previous && (
-            <Link to={previous.fields!.slug!} rel="prev">
-              ← {previous.frontmatter!.title}
+            <Button width={"120px"} align={"left"}>
+              <Link to={previous.fields!.slug!} rel="prev">
+                ← Prev
             </Link>
+            </Button>
           )}
         </li>
         <li>
           {next && (
-            <Link to={next.fields!.slug!} rel="next">
-              {next.frontmatter!.title} →
+            <Button width={"120px"} align={"right"}>
+              <Link to={next.fields!.slug!} rel="next">
+                Next →
             </Link>
+            </Button>
           )}
         </li>
       </PostNavigator>
@@ -104,7 +139,6 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "YYYY-MM-DD")
-        description
       }
     }
   }
