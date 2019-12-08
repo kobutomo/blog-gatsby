@@ -54,11 +54,13 @@
   overflow: initial;
   float: left; /* 1 */
   min-width: 100%; /* 2 */
-  font-size: 1.4rem;
+}
+.gatsby-highlight code[class*="language-"] {
+  font-size: 1.4rem !important;
 }
 @media screen and (min-width: 960px) {
-  .gatsby-highlight pre[class*="language-"] {
-    font-size: 1.5rem;
+  .gatsby-highlight code[class*="language-"] {
+    font-size: 1.5rem !important;
   }
 }
 
