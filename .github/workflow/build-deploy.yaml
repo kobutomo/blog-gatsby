@@ -1,0 +1,34 @@
+name: deploy lightsail
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@master
+
+    - name: setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - run: npm install
+    - run: gatsby build
+
+    - name: deploy
+      uses: peaceiris/actions-gh-pages@v2.4.0
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./public
+
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v1
+      with: # shimataro/ssh-key-actionに渡すパラメーター
+        private-key: ${{ secrets.SSH_KEY }} # 必須
+        public-key: ${{ secrets.SSH_KEY_PUBLIC }} # 必須
+    - name: run deploy script
+      run: bash deploy.sh
