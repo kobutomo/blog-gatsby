@@ -2,10 +2,10 @@ module.exports = {
   siteMetadata: {
     title: `Tomokoro Engineering`,
     author: `Tomoro Nishida`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `フロントエンドエンジニアの技術ブログ`,
+    siteUrl: `https://blog.tomokoro.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `kobu_tomo`,
     },
   },
   plugins: [
@@ -75,13 +75,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Tomokoro Engineering`,
+        short_name: `TE`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#202429`,
+        theme_color: `#202429`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/favicon.png`,
       },
     },
     `gatsby-plugin-offline`,

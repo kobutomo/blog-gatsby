@@ -16,7 +16,7 @@ export default styled(Button)`
   a,span {
     display: flex;
     align-items: center;
-    padding: 7px 20px 3px;
+    padding: 5px 20px 5px;
     width: ${props => (props.width ? props.width : "auto")};
     background-color: #b65858;
     border-radius: 50px;
