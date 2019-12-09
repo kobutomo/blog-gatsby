@@ -28,20 +28,30 @@ export const SEO = (props: Props) => {
   const keywords = props.keywords || []
   const description = props.description || ""
 
-  const { site } = useStaticQuery(
+  const { avatar, site } = useStaticQuery(
     graphql`
       query {
+        avatar: file(absolutePath: { regex: "/og.png/" }) {
+          childImageSharp {
+            original {
+              src
+            }
+          }
+        }
         site {
           siteMetadata {
             title
             description
             author
+            siteUrl
           }
         }
       }
     `
   )
 
+  const ogImage = `${site.siteMetadata.siteUrl}${avatar.childImageSharp.original.src}`
+  console.log(ogImage)
   const metaDescription = description || site.siteMetadata.description
 
   return (
@@ -63,6 +73,10 @@ export const SEO = (props: Props) => {
         {
           content: props.title,
           property: `og:title`,
+        },
+        {
+          content: ogImage,
+          property: `og:image`,
         },
         {
           content: metaDescription,
